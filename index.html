@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>EL LE CARTELLY SPAGHETTI</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    /* Purposefully terrible design choices */
+    body {
+      background: repeating-linear-gradient(
+        45deg,
+        #ff00ff 0 10px,
+        #00ffff 10px 20px
+      );
+      font-family: "Comic Sans MS", "Papyrus", sans-serif;
+      color: yellow;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    header {
+      border-bottom: 12px dashed lime;
+      padding: 10px;
+      box-shadow: 0 10px 0 #000;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin: 0.2rem;
+      letter-spacing: 6px;
+      text-shadow: 3px 3px 0 #000;
+      animation: rainbow 2s infinite;
+    }
+
+    @keyframes rainbow {
+      0% { color: #ff0000; transform: rotate(-2deg); }
+      25% { color: #ff9900; transform: rotate(2deg); }
+      50% { color: #ffff00; transform: rotate(-2deg); }
+      75% { color: #00ff00; transform: rotate(2deg); }
+      100% { color: #00ffff; transform: rotate(-2deg); }
+    }
+
+    marquee { font-weight: bold; font-size: 1.25rem; color: black; }
+
+    .disclaimer {
+      background: #fff;
+      color: #000;
+      display: inline-block;
+      margin: 8px auto;
+      padding: 10px;
+      border: 6px double red;
+      font-size: 1.1rem;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .box {
+      width: 90%;
+      max-width: 900px;
+      margin: 12px auto;
+      background: linear-gradient(180deg,#ffefd5,#ffe4e1);
+      border: 8px groove magenta;
+      padding: 14px;
+      text-align: left;
+    }
+
+    .gif-row img {
+      width: 160px;
+      height: auto;
+      border: 8px ridge #0f0;
+      transform: rotate(-6deg);
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 6px;
+      padding: 8px 12px;
+      text-decoration: none;
+      background: magenta;
+      color: lime;
+      border: 3px outset yellow;
+      font-weight: bold;
+    }
+
+    footer {
+      margin: 20px 0;
+      font-size: 0.85rem;
+    }
+
+    /* Totally unnecessary blinking */
+    .blink {
+      animation: blinktext 0.6s steps(2, start) infinite;
+      font-weight: 900;
+    }
+    @keyframes blinktext {
+      to { visibility: hidden; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <marquee behavior="alternate" scrollamount="12">🔥 WELCOME TO THE OFFICIAL CLUB DEL SOMBRERO WEBSITE 🔥</marquee>
+    <h1>EL CLUB DEL SOMBRERO</h1>
+    <div class="disclaimer">
+      <strong>DISCLAIMER:</strong> This website is a <em>prank</em> and entirely fictional. No real group is represented. If you are uncomfortable, please close this page.
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="box">
+      <h2 class="blink">Official Notices (Probably Not Real)</h2>
+      <p>
+        Welcome, amigo — you have reached the very <em>official</em> web portal for <strong>El Club del Sombrero</strong>.
+        Please enjoy worthless rules, glittery badges, and an exclusive ringtone (not included).
+      </p>
+
+      <div style="text-align:center; margin:12px 0;">
+        <img src="https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif" alt="spinning" width="200">
+        <img src="https://media.giphy.com/media/l0MYEqEzwMWFCg8rm/giphy.gif" alt="party" width="200">
+      </div>
+
+      <p><strong>Membership Perks:</strong></p>
+      <ul>
+        <li>Free sombrero (in your imagination)</li>
+        <li>Monthly invisible newsletter (sent by carrier pigeon)</li>
+        <li>1-year subscription to our bad taste mailing list</li>
+      </ul>
+
+      <p class="links">
+        <a href="guestbook.html">Sign the Guestbook</a>
+        <a href="#">Apply for Sombrero</a>
+        <a href="#">Secret Recipes</a>
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Official Poster (Totally Not a Threat)</h2>
+      <p style="font-size:1.1rem;">
+        <strong>WANTED:</strong> People who bring snacks to parties. Reward: eternal gratitude and a sticker.
+      </p>
+      <div style="text-align:center; margin-top:10px;">
+        <img src="https://placekitten.com/300/200" alt="cute cat" style="border:10px dotted red;">
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>Encrypted Message</h2>
+      <p style="font-family: monospace; background:#000; color:#0f0; padding:10px;">
+        01001000 01100101 01101100 01101100 01101111 00100001
+      </p>
+      <p style="font-size:0.9rem;">(Hint: this is definitely a super serious secret)</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> El Club del Sombrero — <em>Totally Fictional</em></p>
+  </footer>
+
+  <script>
+    // simple flourish
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // terrible cursor swap
+    document.body.style.cursor = "url('https://cur.cursors-4u.net/cursors/cur-11/cur982.png'), auto";
+
+    // prompt gag — opens once
+    if (!localStorage.getItem('seenPrank')) {
+      alert("IMPORTANT: This is a prank site. If you're not in on it, close now!");
+      localStorage.setItem('seenPrank', '1');
+    }
+  </script>
+</body>
+</html>
